@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #000000;
+  --color-fg: #ffffff;
+  --color-muted: rgba(255, 255, 255, 0.45);
+  --color-accent: #ff3b30;
+  --color-card: rgba(28, 28, 30, 0.78);
+  --color-card-border: rgba(255, 255, 255, 0.08);
+  --color-divider: rgba(255, 255, 255, 0.07);
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Helvetica Neue", system-ui, sans-serif;
+}
+
+html,
+body {
+  background: #000;
+  color: #fff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
+  letter-spacing: -0.01em;
+}
+
+body {
+  min-height: 100dvh;
+  overscroll-behavior: none;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font-family: inherit;
+}
+
+@keyframes break-link {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  40% {
+    transform: translateX(-2px) rotate(-3deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 0.18;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.link-broken {
+  animation: break-link 0.5s ease-out forwards;
+}
